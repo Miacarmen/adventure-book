@@ -1,10 +1,7 @@
 import React from "react";
-// import { Card } from 'react-daisyui';
 import '../styles/Contact.css'
 
 import Logo from "../images/logo.png";
-
-// handleFormSubmit
 
 const Contact = () => {
   return (
@@ -30,7 +27,6 @@ const Contact = () => {
         </div>
         <form className="bg-base-200 py-8 px-16 contactDiv">
           <h2 className="text-center text-xl font-bold py-4">Get in Touch</h2>
-
           <div>
             <span className="uppercase text-sm text-neutral-content font-bold">
               Full Name
@@ -76,6 +72,6 @@ const Contact = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Contact;

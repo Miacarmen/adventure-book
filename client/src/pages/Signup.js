@@ -26,10 +26,8 @@ const Signup = () => {
     });
   };
 
-  // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
 
     try {
       const { data } = await createUser({
@@ -143,10 +141,10 @@ const Signup = () => {
                 {error.message}
               </div>
             )}
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };

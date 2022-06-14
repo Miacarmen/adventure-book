@@ -50,25 +50,25 @@ const client = new ApolloClient({
 export default function App() {
   return (
     <ApolloProvider client={client}>
-    <Router forceRefresh={true}>
-      <div className="pageContainer">
-    <Nav />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/explore/viewpost/:postId" element={<ViewPost />} />
-          <Route path="/addpost" element={<AddPost />} />
-          <Route path="/dashboard/editpost/:postId" element={<EditPost />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/explore" element={<Explore />} />
-          <Route path="*" element={<p>Page Not Found</p>} />
-        </Routes>
-        <Foot />
-      </div>
-    </Router>
+      <Router forceRefresh={true}>
+        <div className="pageContainer">
+          <Nav />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/explore/viewpost/:postId" element={<ViewPost />} />
+            <Route path="/addpost" element={<AddPost />} />
+            <Route path="/dashboard/editpost/:postId" element={<EditPost />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/explore" element={<Explore />} />
+            <Route path="*" element={<p>Page Not Found</p>} />
+          </Routes>
+          <Foot />
+        </div>
+      </Router>
     </ApolloProvider>
   );
 }

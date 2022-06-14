@@ -19,8 +19,8 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
+//This route forces the React Router to load when it hasn't been loaded, instead of giving the dreaded 404 error
 app.get('/*', function(req, res) {
-  console.log("Hitting wildcard route!");
   res.sendFile(path.join(__dirname, '../client/build/index.html'), function(err) {
     if (err) {
       res.status(500).send(err)
@@ -38,7 +38,6 @@ const startApolloServer = async (typeDefs, resolvers) => {
 db.once('open', () => { // Start the database connection
   app.listen(PORT, () => { // Start the Express server
     console.log(`Adventure book server running on port ${PORT}!`);
-    console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
   });
 });
 

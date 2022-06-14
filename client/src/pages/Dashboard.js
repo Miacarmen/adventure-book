@@ -27,34 +27,23 @@ const Dashboard = () => {
         <h2 className="text-bold text-2xl text-base-300 text-center my-4 pt-4 ">
           My Adventure Book
         </h2>
-        {/* Dynamically update container size based on posts */}
       </div>
       <div className="grid grid-cols-8 gap-4 text-neutral-content mr-12 dashComps">
         <Sidebar className="sideBar" userCollection={user.userCollection} />
-
         <Hero className="postContainer bg-base-200 mb-10 mt-5 px-6 pb-7 overflow-auto mr-4 col-span-6 myPosts">
           <div>
             <h2 className="text-bold text-xl text-center text-neutral-content my-4 ">
               My Posts
             </h2>
-
-            {/* Dynamically update based on users recent posts */}
             <div className="grid grid-cols-3 gap-4 place-items-center py-3 text-neutral-content dashboardCards">
               {user.posts.map((post) => (
-                <DashCard
-                  key={post.id}
-                  title={post.title}
-                  post={post}
-                  image={post.images[0]}
-                />
+                <DashCard key={post.id} title={post.title} post={post} image={post.images[0]} />
               ))}
             </div>
-            {/* Add onClick function to render AddPost page*/}
             <div className="m-10 addBtn">
               <Link
                 to="/addpost"
-                className="btn rounded-full bg-accent border-none hover:bg-accent-focus hover:shadow-lg text-base-content"
-              >
+                className="btn rounded-full bg-accent border-none hover:bg-accent-focus hover:shadow-lg text-base-content" >
                 Add<i className="fa-solid fa-circle-plus fa-2xl ml-2"></i>
               </Link>
             </div>

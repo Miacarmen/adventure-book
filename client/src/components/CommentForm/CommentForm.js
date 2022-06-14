@@ -38,7 +38,6 @@ const CommentForm = ({ postId }) => {
     const { name, value } = event.target;
     if (name === "commentText" && value.length <= 280) {
       setCommentText(value);
-      //setCharacterCount(value.length); // Now handled by useEffect
     }
   };
 

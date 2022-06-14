@@ -87,7 +87,6 @@ function AddPost() {
         }
       });
       window.location.assign("/dashboard");
-      //navigate("/dashboard", {replace: true});
     } catch (e) {
       alert(e);
     }

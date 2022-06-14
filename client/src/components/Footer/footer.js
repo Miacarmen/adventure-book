@@ -13,6 +13,7 @@ const Foot = () => {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
+    window.location.assign('/')
   };
   return (
     <Footer className="footer footer-center p-4 bg-primary rounded text-secondary-content">

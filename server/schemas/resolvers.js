@@ -31,13 +31,11 @@ const resolvers = {
     login: async (parent, args) => {
       const user = await User.findOne({ username: args.username });
       if (!user) {
-        console.log("User not found!");
-        return null;
+        throw new Error("User not found!");
       }
       const passwordMatches = await user.isCorrectPassword(args.password);
       if (!passwordMatches) {
-        console.log("PasswordFailed!");
-        return null;
+        throw new Error("Password does not match!");
       }
       const token = signToken(user);
       return { token: token, user: user };

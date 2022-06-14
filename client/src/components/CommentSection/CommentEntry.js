@@ -6,7 +6,6 @@ import { REMOVE_COMMENT } from "../../utils/mutation";
 const CommentEntry = ({ comment, onUpdatePost }) => {
   const [deleteComment, { error }] = useMutation(REMOVE_COMMENT);
 
-  // TODO move to view post page component
   const handleDeleteComment = async (event) => {
     event.preventDefault();
 
