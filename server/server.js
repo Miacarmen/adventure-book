@@ -19,6 +19,7 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
+//This route forces the React Router to load when it hasn't been loaded, instead of giving the dreaded 404 error
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, '../client/build/index.html'), function(err) {
     if (err) {
