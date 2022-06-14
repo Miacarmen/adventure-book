@@ -27,7 +27,6 @@ const Login = () => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log(loginState);
 
     try {
       const { data } = await login({

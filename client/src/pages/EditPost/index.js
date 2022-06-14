@@ -38,9 +38,7 @@ const EditPost = () => {
 
   const handleEditSubmit = async (e) => {
     e.preventDefault();
-    console.log("Original post data:" + data.post);
     try {
-      console.log(params.postId);
       await updatePost({
         variables: {
           postId: params.postId,
@@ -49,8 +47,6 @@ const EditPost = () => {
           content: postState.content
         }
       });
-      //console.log(updatedPost.data.updatePost.id);
-      //navigate("/dashboard");
       window.location.assign("/dashboard");
     } catch (err) {
       console.error(err);

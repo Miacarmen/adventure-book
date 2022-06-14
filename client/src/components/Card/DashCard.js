@@ -24,7 +24,6 @@ const DashCard = ({image, title, post, refresh, dummy}) => {
 
   const handleRemovePost = async (post) => {
     try {
-      console.log(post);
       await removePost({ variables: { postId: post.id } });
 
       window.location.reload();
@@ -38,7 +37,6 @@ const DashCard = ({image, title, post, refresh, dummy}) => {
 
   const handleEditPost = async () => {
     window.location.assign("/dashboard/editpost/" + post.id);
-    console.log(post);
   };
 
   return (
