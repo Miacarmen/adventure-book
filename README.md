@@ -67,6 +67,32 @@ With this, we were able to add what could be a simple login to something that fi
 
 ### **Explore Page**
 
+The Explore page is the main component that the user will see when they login. This page showcases all the posts from any user within the site so the current user can view it for travel recommendations. Here we used a search bar to search any tag that a user has used in the past to get a unique search for what they want. The following code shows how this search bar was implemented.
+
+```
+  const [getFilteredPosts] = useLazyQuery(QUERY_POSTS_WITH_TAG);
+  const [getUnfilteredPosts] = useLazyQuery(QUERY_POSTS);
+
+  function requestSearch(criteria) {
+    getFilteredPosts({
+      variables: { tags: criteria },
+    }).then((res) => {
+      if (res.data.postsByTag) {
+        setQueryData(res.data.postsByTag);
+      }
+    });
+  }
+
+  useEffect(() => {
+    getUnfilteredPosts().then((res) => {
+      if (res.data.posts) {
+        setQueryData(res.data.posts);
+      }
+    });
+  }, [getUnfilteredPosts]);
+
+```
+
 
 ### **Dashboard**
 
@@ -74,6 +100,31 @@ The dashboard of Adventure Book is only visible when the user is logged in. Upon
 
 
 <img src= "./client/src/images/dashboard%20photo.PNG" height="200px" width="400px">
+
+The dashboard also has a saved post component that allows the use to view favorite posts from other users so they can reference it at a later time. To get thi function running, we used created two functions to either add to the collection or remove from it. The following coded shows how this was implemented.
+
+```
+ async function addToUserCollection() {
+    try {
+      setColorToggle("red");
+      await addToCollection({ variables: { postId: props.postId } });
+      setCollected(true);
+    } catch (err) {
+      console.error(addError ? addError : err);
+      setColorToggle("black");
+    }
+  }
+
+ async function removeFromUserCollection() {
+    try {
+      setColorToggle("black");
+      await removeFromCollection({ variables: { postId: props.postId } });
+      setCollected(false);
+    } catch (err) {
+      console.error(removeError ? removeError : err);
+      setColorToggle("red");
+    }
+```
 
 ### **Edit Post**
 
@@ -114,7 +165,31 @@ Video below to reference adding a post
 
 ### **View Post**
 
+The final component to this web application was to view a single post. This was queried by the ID and got back all of the specific information the user would only be able to see at this page. The user viewing the post will be able to see all the pictures associated with the post, the description, the location on a map, comments, and a way to favorite the post to bring it to their own dashboard. The notable technologies used for this page was the Map and Image Carousel. The following lines of codes are how both were implemented.
 
+```
+            <SimpleImageSlider
+              width={820}
+              height={700}
+              images={makeCarouselImageData(post.images)}
+              showBullets={true}
+              showNavs={true}
+              overflow="hidden"
+              className="slider"
+            />
+```
+
+The Bing maps was also imported, making it very easy to implement into our web app for a better user experience.
+
+```
+            <Map
+              height="600px"
+              width="820px"
+              center={[post.location.latitude, post.location.longitude]}
+              locations={[[post.location.latitude, post.location.longitude]]}
+              onClick={() => {}}
+            />
+```
 
 ## **Technologies Used**
 

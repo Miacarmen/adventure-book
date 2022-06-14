@@ -10,18 +10,17 @@ const CommentForm = ({ postId }) => {
   const [characterCount, setCharacterCount] = useState(0);
   useEffect(() => {
     setCharacterCount(commentText.length);
-  }, [commentText])
+  }, [commentText]);
 
   const [addComment, { error }] = useMutation(ADD_COMMENT);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    if(characterCount === 0)
-    {
+    if (characterCount === 0) {
       alert("Comments must have a body!");
       return;
     }
-    
+
     try {
       await addComment({
         variables: {
@@ -45,7 +44,7 @@ const CommentForm = ({ postId }) => {
   return (
     <div className="commentSection">
       <form className="" onSubmit={handleFormSubmit}>
-        <p className="mb-2">Join the Discussion</p>
+        <p className="mb-2 mt-5">Join the Discussion</p>
         <Textarea
           name="commentText"
           placeholder="Add a Comment or Question"
@@ -55,7 +54,7 @@ const CommentForm = ({ postId }) => {
         ></Textarea>
 
         <p
-          className={`text-sm text-indigo-700 float-right ${
+          className={`text-sm text-indigo-700  ${
             characterCount === 280 || error ? "text-danger" : ""
           }`}
         >

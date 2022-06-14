@@ -12,12 +12,12 @@ const DashCard = ({image, title, post, refresh, dummy}) => {
         // TODO -- Investigate this method
         cache.writeQuery({
           query: QUERY_POSTS,
-          data: { post: removePost }
+          data: { post: removePost },
         });
       } catch (e) {
         console.error(e);
       }
-    }
+    },
   });
 
   const handleRemovePost = async (post) => {

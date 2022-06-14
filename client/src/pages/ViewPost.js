@@ -1,5 +1,3 @@
-// TO-DO: update carousel for this posts images
-// TO-DO: allow user to save this post to their dashboard
 import React from "react";
 import { Hero, Badge } from "react-daisyui";
 import "../App.css";

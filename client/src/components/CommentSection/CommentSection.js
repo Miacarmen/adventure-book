@@ -1,5 +1,5 @@
 import React from "react";
-import CommentEntry from './CommentEntry';
+import CommentEntry from "./CommentEntry";
 
 const CommentSection = ({ comments = [], onUpdatePost }) => {
   if (!comments.length) {
@@ -19,7 +19,11 @@ const CommentSection = ({ comments = [], onUpdatePost }) => {
       <div className="ml-5">
         {comments &&
           comments.map((comment) => (
-            <CommentEntry key={comment.id} comment={comment} onUpdatePost={onUpdatePost}/>
+            <CommentEntry
+              key={comment.id}
+              comment={comment}
+              onUpdatePost={onUpdatePost}
+            />
           ))}
       </div>
     </>
