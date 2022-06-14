@@ -14,7 +14,7 @@ const Menu = () => {
   return (
     <div className="dropdown dropdown-left mobile-nav">
       <label
-        tabindex="0"
+        tabIndex="0"
         type="checkbox"
         className="dropMenu btn btn-ghost btn-circle"
         onClick={() => setExpandMenu(expandMenu)}
@@ -22,7 +22,7 @@ const Menu = () => {
         {/* toggle menu state on click */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5"
+          className="h-5 w-5"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -37,7 +37,7 @@ const Menu = () => {
       </label>
       {Auth.loggedIn() ? (
         <ul
-          tabindex="0"
+          tabIndex="0"
           className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 "
         >
           <Link to="/" className="hover:text-indigo-500 ">
@@ -55,9 +55,8 @@ const Menu = () => {
         </ul>
       ) : (
         <ul
-          tabindex="0"
-          className=" menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-        >
+          tabIndex="0"
+          className=" menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
           <li>Home</li>
           <li>Login</li>
         </ul>

@@ -12,7 +12,6 @@ const Login = () => {
   const [loginState, setLoginState] = useState({ username: "", password: "" });
   const [login, { error }] = useMutation(LOGIN);
 
-//get rid of box when hit submit
   const [isActive, setIsActive] = useState("active");
 
   //update state when the input changes for login

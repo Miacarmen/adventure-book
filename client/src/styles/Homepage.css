@@ -1,6 +1,5 @@
 .appName {
-  font-family: "Londrina Solid", Impact, Haettenschweiler, "Arial Narrow Bold",
-    sans-serif;
+  font-family: "Londrina Solid", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 #stamps {
@@ -8,7 +7,6 @@
   transform: scaleX(-1);
   padding-top: 1.3rem;
 }
-
 
 .socialIcons {
   display: flex;

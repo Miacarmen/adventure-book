@@ -55,7 +55,6 @@ const EditPost = () => {
 
   const goBack = (e) => {
     window.location.assign("/dashboard");
-    //navigate("/dashboard");
   };
 
   if (loading) {

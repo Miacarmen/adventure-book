@@ -15,7 +15,6 @@ import { QUERY_POSTS, QUERY_POSTS_WITH_TAG } from "../utils/queries";
 const Explore = () => {
   const [queryData, setQueryData] = useState([]);
 
-  //const { loading, data: unfilteredData } = useQuery(QUERY_POSTS);
   const [getFilteredPosts] = useLazyQuery(QUERY_POSTS_WITH_TAG);
   const [getUnfilteredPosts] = useLazyQuery(QUERY_POSTS);
 
@@ -52,7 +51,6 @@ const Explore = () => {
           </h3>
         </div>
         <div className="pt-20 mx-auto text-gray-600">
-          {/* handle form submit that renders posts with the tags that were searched */}
           <SearchForm onRequestSearch={requestSearch} />
         </div>
       </Hero>
@@ -62,9 +60,6 @@ const Explore = () => {
             Most Recent Posts
           </h2>
           <div className="cardContainer md:pl-24 flex-wrap grid grid-cols-4 gap-3 py-3 text-secondary-content place-items-center md:flex">
-            {/* Dynamically update based on most recent posts */}
-
-            {/* map through posts */}
             {queryData.map((post) => (
               <Link key={post.id} to={`/explore/viewpost/${post.id}`}>
                 <ExploreCard
@@ -81,6 +76,6 @@ const Explore = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Explore;

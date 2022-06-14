@@ -26,7 +26,6 @@ const Signup = () => {
     });
   };
 
-  // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -142,10 +141,10 @@ const Signup = () => {
                 {error.message}
               </div>
             )}
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };

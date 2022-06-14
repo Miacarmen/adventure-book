@@ -14,7 +14,6 @@ const Home = () => {
         <Hero.Content className="text-center">
           <div className="max-w-lg text-secondary-content">
             <h1 className="appName text-7xl pb-8">ADVENTURE BOOK</h1>
-
             <div className="bookContainer py-40">
               <div className="book">
                 <span className="page turn"></span>
@@ -63,7 +62,7 @@ const Home = () => {
               <p className=" text-indigo-500">
                 Discover Hidden Gems, Live Like The Locals Do.
               </p>
-              Google and Travel Advisor Don’t Always Know It All.
+              Google and Travel Advisor Don't Always Know It All.
             </h2>
             {Auth.loggedIn() ? (
               <Link

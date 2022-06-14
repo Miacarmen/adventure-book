@@ -6,8 +6,6 @@ import { REMOVE_POST } from "../../utils/mutation";
 import { QUERY_POSTS } from "../../utils/queries";
 
 const DashCard = ({image, title, post, refresh, dummy}) => {
-  //const navigate = useNavigate();
-  //remove post
   const [removePost] = useMutation(REMOVE_POST, {
     update(cache, { data: { removePost } }) {
       try {

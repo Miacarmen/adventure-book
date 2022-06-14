@@ -24,14 +24,12 @@
 .signupTxt {
   text-align: center;
 }
-.signupForm,
-.loginForm {
+.signupForm, .loginForm {
   margin: auto;
 }
 
 /* media screens for login and sign up pages */
 @media screen and (max-width: 768px) {
- 
   .loginForm,
   .signupForm {
     margin: auto;
