@@ -62,7 +62,7 @@ const Home = () => {
               <p className=" text-indigo-500">
                 Discover Hidden Gems, Live Like The Locals Do.
               </p>
-              Google and Travel Advisor Don't Always Know It All.
+              Google and Trip Advisor Don't Always Know It All.
             </h2>
             {Auth.loggedIn() ? (
               <Link
